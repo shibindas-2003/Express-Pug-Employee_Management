@@ -1,0 +1,25 @@
+extends layout
+
+block content
+  table
+    thead
+      tr
+        th Employee ID
+        th Employee Name
+        th Employee Email
+        th Employee Number
+        th Employee Gender
+        th Employee Dept
+        th Employee Location
+    tbody
+      each employee in employees
+        tr
+          td= employee.Emp_id
+          td= employee.Emp_name
+          td= employee.Emp_email
+          td= employee.Emp_number
+          td= employee.Emp_gender
+          td= employee.Emp_dept
+          td= employee.Emp_loc
+            a(href=`/edit/${employee._id}`) Edit |
+            a(href=`/delete/${employee._id}` onclick="return confirm('Are you sure?')") Delete
